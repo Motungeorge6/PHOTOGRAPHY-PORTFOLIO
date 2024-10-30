@@ -1,0 +1,37 @@
+/* Horizontal scroll container for images */
+.horizontal-scroll-container {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    display: flex;
+    align-items: center;
+    scroll-snap-type: y mandatory; /* Scrolls one image at a time vertically */
+    scroll-behavior: smooth;
+}
+
+/* Flexbox container to hold images */
+.frame {
+    display: flex;
+    flex-direction: row; /* Arrange images horizontally */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Each image takes up full viewport height */
+}
+
+/* Each individual image container */
+.frame-item {
+    flex: 0 0 100vw; /* Each image takes full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start; /* Snap to each image when scrolling */
+}
+
+/* Image styling */
+.frame-image {
+    max-width: 80vw; /* Scale the image to 80% of viewport width */
+    max-height: 80vh; /* Scale the image to 80% of viewport height */
+    object-fit: contain; /* Preserve image aspect ratio */
+}
